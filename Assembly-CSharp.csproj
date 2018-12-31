@@ -61,17 +61,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BarkingManager.cs" />
     <Compile Include="Assets\BrokenVector\LowPolySurvivalEssentials\Example\Scripts\AnimatedFire.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\DogMovement.cs" />
+    <Compile Include="Assets\ForeBorder.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\JoyButton.cs" />
     <Compile Include="Assets\JoystickScript.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\MenuScript.cs" />
     <Compile Include="Assets\PlaneScript.cs" />
+    <Compile Include="Assets\SheepManager.cs" />
     <Compile Include="Assets\SheepMenu.cs" />
     <Compile Include="Assets\sheepMovement.cs" />
+    <Compile Include="Assets\WolfMovement.cs" />
     <None Include="Assets\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
