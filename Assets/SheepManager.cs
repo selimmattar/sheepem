@@ -8,22 +8,22 @@ public class SheepManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    /*    foreach (var gameObj in GameObject.FindGameObjectsWithTag("sheep") as GameObject[])
+        {
+
+            runFromDog(gameObj.GetComponent<sheepMovement>());
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("Bark");
 
     }
     public void dogBark()
     {
-        foreach (var gameObj in GameObject.FindGameObjectsWithTag("sheep") as GameObject[])
-        {
-
-            runFromDog(gameObj.GetComponent<sheepMovement>());
-        }
+        
     }
     public void runFromDog(sheepMovement sheep)
     {
@@ -48,7 +48,7 @@ public class SheepManager : MonoBehaviour
             sheep.movespeed = Random.Range(0, 3);
             sheep.agent.SetDestination(new Vector3(sheep.transform.position.x + sheep.FromDogDirection.x * sheep.movespeed, 0, sheep.transform.position.z + sheep.FromDogDirection.y * sheep.movespeed));
 
-            sheep.RandomRunFD = Random.Range(1, 5);
+            sheep.RandomRunFD = Random.Range(5, 10);
         }
         
         if (sheep.transform.position == sheep.lastpos) sheep.sheepState = sheepMovement.State.Idle;

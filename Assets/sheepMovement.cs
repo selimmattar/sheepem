@@ -35,7 +35,13 @@ public class sheepMovement : MonoBehaviour {
     void Update()
     {
         Move();
-        
+
+        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) <= 3f)
+        {
+           
+            this.sheepState = State.RunningFromDog;
+        }
+            
     }
     private void LateUpdate()
     {
@@ -79,7 +85,24 @@ public class sheepMovement : MonoBehaviour {
         else if (sheepState == State.RunningFromDog)
         {
 
+            if (RandomRunFD <= 0)
+            {
 
+               FromDogDirection = new Vector2(Random.Range(-10, -5), Random.Range(-10, -5));
+                if (transform.position.x < 20f)
+                   FromDogDirection.x = Random.Range(5, 10);
+
+                if (transform.position.z <-15f)
+                    FromDogDirection.y = Random.Range(5, 10);
+                movespeed = Random.Range(1f, 3f);
+                agent.SetDestination(new Vector3(transform.position.x + FromDogDirection.x * movespeed, 0, transform.position.z + FromDogDirection.y * movespeed));
+
+                RandomRunFD = Random.Range(3, 5);
+                if (transform.position == lastpos) sheepState = sheepMovement.State.Idle;
+            }
+            RandomRunFD -= Time.deltaTime;
+
+           
 
         }
             
@@ -98,32 +121,7 @@ public class sheepMovement : MonoBehaviour {
     }
 
     
-    public void runFromDog(sheepMovement sheep)
-    {
-            
-        
-        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, sheep.transform.position) <= 3f)
-        {
-            sheep.RandomRunFD = 0;
-        }
-        
-      
-        if (sheep.RandomRunFD <= 0)
-        {
-
-            sheep.FromDogDirection = new Vector2(Random.Range(-2f, -1f), Random.Range(-2f, -1f));
-            if (GameObject.FindGameObjectWithTag("Player").transform.position.x < sheep.transform.position.x)
-                sheep.FromDogDirection.x = Random.Range(1f, 2f);
-
-            if (GameObject.FindGameObjectWithTag("Player").transform.position.z < sheep.transform.position.z)
-                sheep.FromDogDirection.y = Random.Range(1f, 2f);
-            sheep.movespeed = Random.Range(0, 3);
-            sheep.agent.SetDestination(new Vector3(sheep.transform.position.x + sheep.FromDogDirection.x * sheep.movespeed, 0, sheep.transform.position.z + sheep.FromDogDirection.y * sheep.movespeed));
-
-            sheep.RandomRunFD = Random.Range(1f, 5f);
-        }
-        if (transform.position == sheep.lastpos) sheepState=State.Idle;
-    }
+    
 
  
 

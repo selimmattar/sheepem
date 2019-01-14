@@ -1667,7 +1667,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 3895
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 75b7e9fdb724fc14aad0f7a7be7979ad, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 11e147139c726844ba1411e0762009bd, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -1685,7 +1685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175160339}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 11.89, y: 51.3, z: -14.6}
+  m_LocalPosition: {x: 11.89, y: 23, z: -14.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8019,7 +8019,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 8400000, guid: 75b7e9fdb724fc14aad0f7a7be7979ad, type: 2}
+  m_Texture: {fileID: 8400000, guid: 11e147139c726844ba1411e0762009bd, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -15113,8 +15113,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 34031983}
-        m_MethodName: dogBark
+      - m_Target: {fileID: 1567090029}
+        m_MethodName: Return
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21669,7 +21669,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.48
-  m_Speed: 5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

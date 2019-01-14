@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
         RetryBtn.SetActive(false);
         Time.timeScale = 0;
         myAM.SetFloat("Lowpass", 350f);
-        TimerText.gameObject.SetActive(false);
+        //TimerText.gameObject.SetActive(false);
         FinalMessage.gameObject.SetActive(false);
         Barkbtn.SetActive(false);
 
