@@ -14,6 +14,7 @@ public class DogMovement : MonoBehaviour, IPointerDownHandler
     private Rigidbody rigidbody;
     public GameObject DestinationTarget;
     private Vector3 lastpos;
+    private Animator anim;
     public void OnPointerDown(PointerEventData eventData)
     {
         throw new System.NotImplementedException();
@@ -33,6 +34,8 @@ public class DogMovement : MonoBehaviour, IPointerDownHandler
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         Physics.IgnoreLayerCollision(10,9);
         rigidbody = GetComponent<Rigidbody>();
+        anim= gameObject.GetComponentInChildren<Animator>();
+
     }
     private void LateUpdate()
     {
@@ -52,14 +55,18 @@ public class DogMovement : MonoBehaviour, IPointerDownHandler
                 agent.SetDestination(hit.point);
                 DestinationTarget.transform.position = new Vector3(hit.point.x, DestinationTarget.transform.position.y, hit.point.z);
                 DestinationTarget.GetComponent<Renderer>().enabled=true;
+                 anim.SetInteger ("AnimPar", 1);
                 
             }
             
            
 
         }
-        if (lastpos == transform.position && !agent.isStopped)
-            DestinationTarget.GetComponent<Renderer>().enabled = false;
+        if (lastpos == transform.position && !agent.isStopped) {
+             anim.SetInteger ("AnimPar", 0);
+             DestinationTarget.GetComponent<Renderer>().enabled = false;
+        }
+            
         else DestinationTarget.GetComponent<Renderer>().enabled = true;
         /*else
         {
