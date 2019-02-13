@@ -26,7 +26,7 @@ public class sheepMovement : MonoBehaviour {
         RandomIdle = 0f;
         RandomWander = 5f;
         RandomRunFD = 0f;
-        agent.enabled = false;
+        agent.enabled = true;
         isIdle = true;
         rigidbody = GetComponent<Rigidbody>();
         

@@ -62,12 +62,17 @@ public class DogMovement : MonoBehaviour, IPointerDownHandler
            
 
         }
-        if (lastpos == transform.position && !agent.isStopped) {
-             anim.SetInteger ("AnimPar", 0);
-             DestinationTarget.GetComponent<Renderer>().enabled = false;
+        if (lastpos == transform.position && !agent.isStopped)
+        {
+            anim.SetInteger("AnimPar", 0);
+            DestinationTarget.GetComponent<Renderer>().enabled = false;
         }
-            
-        else DestinationTarget.GetComponent<Renderer>().enabled = true;
+
+        else
+        {
+            anim.SetInteger("AnimPar", 1);
+            DestinationTarget.GetComponent<Renderer>().enabled = true;
+        }
         /*else
         {
             rigidbody.velocity = new Vector3(joystick.Movement().x * moveSpeed, rigidbody.velocity.y, joystick.Movement().y * moveSpeed);

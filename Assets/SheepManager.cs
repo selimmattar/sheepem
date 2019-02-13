@@ -18,7 +18,7 @@ public class SheepManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Bark");
+     
 
     }
     public void dogBark()

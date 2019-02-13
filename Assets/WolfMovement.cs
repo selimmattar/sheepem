@@ -6,7 +6,7 @@ public class WolfMovement : MonoBehaviour
 {
     public enum State {Wandering,Attacking,Returning};
     private State WolfState;
-    float RandomWanderTime;
+    float RandomWanderTime=0;
     private NavMeshAgent agent;
     private Vector2[] Wanderpoints;
     private GameObject VictimSheep;
