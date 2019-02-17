@@ -9,7 +9,7 @@ public class arrivalScript : MonoBehaviour
     {
         
     }
-//
+//rocket
     // Update is called once per frame
     void Update()
     {
